@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block main %} {% include 'navbar.html' %}
+<form method="POST">
+  {% csrf_token %} {{form.as_table}}
+  <button type="submit" class="btn btn-warning">save</button>
+</form>
+{% endblock main %}

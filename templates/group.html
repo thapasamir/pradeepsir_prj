@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block main %} {% include 'navbar.html' %}
+<div class="container">
+  <br />
+  <br />
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Group Name</th>
+        <th scope="col">Date created</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    {% for i in group %}
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{i.group_name}}</td>
+        <td>{{i.date_created}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock main %}
