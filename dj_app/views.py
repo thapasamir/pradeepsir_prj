@@ -1,10 +1,30 @@
 from django.shortcuts import render, redirect
 from dj_app.models import User, admine, Group
-from .form import Userform
+from .form import Userform, Groupform
 
 
 def home(request):
     return render(request, 'home.html')
+
+
+def create_user(request):
+    edit_form = Userform()
+    fm = Userform()
+    if request.method == "POST":
+        print("yoooooo")
+        fm = Userform(request.POST)
+        if fm.is_valid():
+            fm.save()
+    return render(request, 'create_user.html', {'form': edit_form})
+
+
+def create_group(request):
+    grup = Groupform()
+    if request.method == "POST":
+        fm = Groupform(request.POST)
+        if fm.is_valid():
+            fm.save()
+    return render(request, 'create_group.html', {'form': grup})
 
 
 def user(request):  # this admin may cause error in future

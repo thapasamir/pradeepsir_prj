@@ -7,14 +7,22 @@
 <br />
 <div class="container-fluid">
   <div class="text-center">
-    <button type="button" class="btn btn-outline-warning btn-lg">
+    <a
+      type="button"
+      class="btn btn-outline-warning btn-lg"
+      href="{% url 'create_user' %}"
+    >
       Create user
-    </button>
+    </a>
     <br />
     <br />
-    <button type="button" class="btn btn-outline-success btn-lg">
+    <a
+      type="button"
+      class="btn btn-outline-success btn-lg"
+      href="{% url 'create_group' %}"
+    >
       Creat Group
-    </button>
+    </a>
   </div>
 </div>
 {% endblock main %}
